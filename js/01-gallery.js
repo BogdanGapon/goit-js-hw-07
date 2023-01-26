@@ -33,4 +33,13 @@ function onCreateImgOnListItem(evt) {
     ` <img src="${evt.target.dataset.source}">`
   );
   activeFullScreenImg.show();
+
+  gallery.addEventListener("keydown", onCloseModalImg);
+
+  function onCloseModalImg(evt) {
+    if (evt.code !== "Escape") {
+      return;
+    }
+    activeFullScreenImg.close();
+  }
 }
