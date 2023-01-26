@@ -23,5 +23,5 @@ gallery.innerHTML = createGalleryItem;
 
 new SimpleLightbox(".gallery__item", {
   captionDelay: 250,
-  captionssData: "alt",
+  captionsData: "alt",
 });
