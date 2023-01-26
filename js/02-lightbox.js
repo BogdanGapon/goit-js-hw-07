@@ -12,7 +12,7 @@ const createGalleryItem = galleryItems
   <img
     class="gallery__image"
     src="${preview}"
-    title="${description}"
+    alt="${description}"
   />
 </a>
 `;
@@ -20,14 +20,8 @@ const createGalleryItem = galleryItems
   .join("");
 
 gallery.innerHTML = createGalleryItem;
-gallery.addEventListener("click", onClickOpenFullImg);
 
-function onClickOpenFullImg(evt) {
-  evt.preventDefault();
-  if (evt.target.nodeName !== "IMG") {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery__item", {
-    captionDelay: 250,
-  });
-}
+new SimpleLightbox(".gallery__item", {
+  captionDelay: 250,
+  captionssData: "alt",
+});
